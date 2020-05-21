@@ -1,0 +1,47 @@
+/*---Variables---*/
+
+$light-color: #f4f4f4;
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #737c8d;
+$secondary-color: #f19d42;
+
+/*---Function--*/
+
+//Set text color based on background
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+        
+        @return #333;
+
+    } @else {
+
+        @return #fff;
+
+    }
+}
+
+/*---Mixins---*/
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin transform-scale($val){
+    -webkit-transform: scale($val);
+        -ms-transform: scale($val);
+            transform: scale($val);
+}
+
+@mixin transition-all($seconds){
+    -webkit-transition: all $seconds;
+    -o-transition: all $seconds;
+    transition: all $seconds;
+}
+
+//Set background and text color
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}

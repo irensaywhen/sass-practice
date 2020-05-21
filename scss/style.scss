@@ -1,5 +1,6 @@
-$light-color: #f4f4f4;
-$font-stack: Arial, Helvetica, sans-serif;
+@import 'config';
+@import 'utilities';
+@import 'buttons';
 
 * {
     box-sizing: border-box;
@@ -12,3 +13,62 @@ body {
     font-family: $font-stack;
     line-height: 1.6;
 }
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.showcase {
+    @include set-background($primary-color);
+    height: 600px;
+
+    nav {
+        @include display-flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            @include display-flex;
+            list-style-type: none;
+        }
+
+        li {
+            padding: 15px;
+        }
+
+        a {
+            color: set-text-color($primary-color);
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &-content {
+        @include display-flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: 30px;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+    }
+}
+
+/*---Media queries---*/
+
+@import 'mobile';
+
