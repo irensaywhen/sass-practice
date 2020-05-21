@@ -29,7 +29,11 @@ a {
 
     nav {
         @include display-flex;
-        align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
         justify-content: space-between;
 
         ul {
@@ -52,8 +56,12 @@ a {
 
     &-content {
         @include display-flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         height: 100%;
         margin-top: 30px;
 
